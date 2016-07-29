@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Garden</title>
+    <style>
+      body{
+        background-color: lightgreen;
+      }
+      img{
+        width:50px;
+        position: absolute;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% for flower in flowers %}
+      <img src= "/images/flower.png" style = "top: {{flower.top}}%; left: {{flower.left}}%;">
+    {% endfor %}
+  </body>
+</html>

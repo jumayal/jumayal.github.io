@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSSI Roster</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-size: 25px;
+      }
+      #side{
+        float:left;
+      }
+      form{
+        padding-right: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSSI Roster</h1>
+
+    <form method = "post" id = "side">
+      <h3>What is your name?<input type="text" name="name"/></h3>
+      <h3>University?<input type="text" name="univ"/></h3>
+      <h3>What Pokemon team are you on (r,b,y)<input type="text" name="team"/></h3>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+
+    <table id = "side">
+      <tr>
+        <td>Name</td>
+        <td>University</td>
+        <td>Team</td>
+      </tr>
+      {% for student in students %}
+        <tr>
+          <td>
+            <a href="{{student.url()}}">
+              {{student.name}}
+            </a>
+          </td>
+
+          <td>{{student.univ}}</td>
+
+          {% if student.team == "r" %}
+            <td bgcolor= "red" width = "30%"></td>
+          {%elif student.team == 'y' %}
+            <td bgcolor="yellow" width = "30%"></td>
+          {%else%}
+            <td bgcolor="blue" width = "30%"></td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

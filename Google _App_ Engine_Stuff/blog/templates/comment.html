@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{post.title}}</title>
+  </head>
+  <style>
+  body{
+    background-color: lightgreen;
+  }
+    .note{
+      background-color: yellow;
+      width: 300px;
+      height: 300px;
+      box-shadow: 2px 6px 5px #383838;
+    }
+    .newposters{
+      background-color: lightblue;
+      width: 300px;
+      height: 150px;
+      box-shadow: 2px 2px 5px #383838;
+    }
+    .box{
+      height:50px;
+      width: 290px;
+    }
+  </style>
+  <body>
+    <div class = "note">
+      <div class = 'header'><h1>{{post.title}}</h1></div>
+      <div>{{post.text}}</div>
+    </div>
+    <form action = "{{post.url()}}" method = "post">
+      <br>
+      <textarea name = "text" placeholder="Text goes here" class = "box"></textarea>
+      <br>
+      <button> Send your comment</button>
+    </form>
+    {%for newpost in newposts%}
+      <div class = newposters>
+        <article>
+          <h2><a href="{{post.url()}}">{{newpost.title}}</a></h2>
+          {{newpost.text}}
+          <div class="date">{{newpost.date}}</div>
+        </article>
+      </div>
+    {% endfor %}
+
+  </body>
+</html>

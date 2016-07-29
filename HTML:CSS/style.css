@@ -1,0 +1,12 @@
+.democrat{
+  color:blue;
+}
+.republican{
+  color:red;
+}
+#current{
+  font-weight: bold;
+}
+section p{
+  font-size:24px;
+}

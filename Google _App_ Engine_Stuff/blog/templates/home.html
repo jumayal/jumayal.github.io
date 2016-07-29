@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Blog</title>
+    <style>
+      body{
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    Welcome to my Blog
+    <div class="go"><center>Post IT!</center></div>
+    <form action="/" method = "post">
+    <input type="text" name="title" placeholder="Title goes here">
+    <br>
+    <br>
+    <textarea name = "text" placeholder="Text goes here"></textarea>
+    <p><input type="submit" value="Post IT"></p>
+    </form>
+    {%for post in posts%}
+      <article>
+        <h2></h2>
+        {{post.text}}
+        <div class="date">{{post.date}}</div>
+      </article>
+    {% endfor %}
+  </div>
+  </body>
+</html>

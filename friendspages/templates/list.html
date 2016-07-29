@@ -1,0 +1,8 @@
+<ul>
+  {%for student in students%}
+  <li><a href="/?name={{student.name}}&college={uni.college}">{{student.name}}
+    {%for uni in universitys%}
+      {{uni.college}}
+    {% endfor %}
+  {% endfor %}
+</ul>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Libro de Caras</title>
+  </head>
+  <style>
+  div.postbox{
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    box-shadow: 10px 10px 5px #888888;
+  }
+  .textbox{
+    height: 100px;
+    width: 300px;
+  }
+  .go{
+    width:300px;
+    height: 50px;
+    background-color: pink;
+    font-size: 50px;
+  }
+  </style>
+  <body>
+    <div class="commentbox">
+      <form method = "post">
+      <div class="go"><center>Post IT!</center></div>
+      <br>
+      <input type="text" name="comment" class = "textbox">
+      <p><input type="submit" value="Submit"></p>
+      </form>
+    </div>
+    {%for user in users%}
+        <p>Posted By: {{user.name}} {{user.time}}</p>
+        <div class = "postbox">
+        {{user.comment}}
+        </div>
+      {% endfor %}
+
+  </body>
+</html>

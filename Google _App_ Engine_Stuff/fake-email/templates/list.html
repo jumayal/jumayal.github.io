@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <ul>
+        {% for email in emails %}
+          <li><a href = "/email">{{email.subject}}</li>
+        {% endfor %}
+    </ul>
+  </body>
+</html>

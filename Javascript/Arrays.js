@@ -1,0 +1,13 @@
+var countries = ["Chad","Cube","Iceland","Iraq","Mali","Oman"];
+countries.push("Fiji");
+alert(countries);
+countries.splice(3,0, "Iran");
+alert(countries);
+countries.splice(2,1,"Togo");
+alert(countries);
+countries.push("Laos");
+alert(countries);
+countries.unshift("Peru");
+alert(countries);
+countries.sort();
+alert(countries);

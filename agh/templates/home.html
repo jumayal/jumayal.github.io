@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
+    <script src="js/home.js"></script>
+    <link rel="stylesheet" href="stylesheets/home.css">
+    <title>Home pAGHe</title>
+  </head>
+  <body background= "images/blueback.jpg">
+
+    <div class="allheader" >
+      <section class = "header">Pidgin</section>
+      <div class = "slide" >
+        <div class="backtab">
+          <a href = "friendspage.html"><div class = "link"><p><center>The Peeps in the Place</center></p></div></a>
+          <a href = "photos.html"><div class = "link"><p><center>UnEnding Photos</center></p></div></a>
+          <a href = "mypage.html"><div class = "link"><p><center>Back to Home Page</center></p></div></a>
+          <a href = "mypage.html"><div class = "link"><p><center>Back to Home Page</center></p></div></a>
+        </div>
+      </div>
+    </div>
+
+    <div class='chat'>
+      <div class="chatbox">
+        <div class = "quote">
+          {%for post in posts%}
+            {% if post.name == username %}
+            <div id = "urposting">
+            {{post.name}}
+              <div class = "urposters">
+                <article>
+                  {{post.text}}
+                  <br>
+                  <div class="date">{{post.date}}</div>
+                </article>
+              </div>
+            </div>
+            {%else%}
+            <div id = "posting">
+            {{post.name}}
+              <div class = "newposters">
+                <article>
+                  {{post.text}}
+                  <br>
+                  <div class="date">{{post.date}}</div>
+                </article>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="textbox">
+        <form action = "/" method = "post">
+          <textarea name = "text" placeholder="Whaaazzzaaa" class = "box" rows="4" cols="50%"></textarea>
+          <button class = 'box'> Hey whats Up Hello</button>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

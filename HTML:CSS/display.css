@@ -1,0 +1,28 @@
+  img{
+    display:block;
+  }
+  p{
+    /*display: inline;*/
+  }
+  section.header{
+    background-color:lightblue;
+    position:absolute;
+    right:0px;
+    width:300px;
+    z-index: 2;
+  }
+
+  section.content{
+    position:relative;
+    top:100px;
+    border:10px solid black;
+  }
+  section p{
+    float: left;
+  }
+  section img{
+    float: right;
+  }
+  section.clear{
+    clear:both;
+  }
